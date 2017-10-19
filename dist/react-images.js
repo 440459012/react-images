@@ -2086,6 +2086,10 @@ var _react = (typeof window !== "undefined" ? window['React'] : typeof global !=
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
 var _theme = require('../theme');
@@ -2123,16 +2127,16 @@ function Arrow(_ref, _ref2) {
 };
 
 Arrow.propTypes = {
-	direction: _react.PropTypes.oneOf(['left', 'right']),
-	icon: _react.PropTypes.string,
-	onClick: _react.PropTypes.func.isRequired,
-	size: _react.PropTypes.oneOf(['medium', 'small']).isRequired
+	direction: _propTypes2['default'].oneOf(['left', 'right']),
+	icon: _propTypes2['default'].string,
+	onClick: _propTypes2['default'].func.isRequired,
+	size: _propTypes2['default'].oneOf(['medium', 'small']).isRequired
 };
 Arrow.defaultProps = {
 	size: 'medium'
 };
 Arrow.contextTypes = {
-	theme: _react.PropTypes.object.isRequired
+	theme: _propTypes2['default'].object.isRequired
 };
 
 var defaultStyles = {
@@ -2183,7 +2187,7 @@ var defaultStyles = {
 module.exports = Arrow;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../theme":41,"../utils":45,"./Icon":32,"aphrodite/no-important":6}],29:[function(require,module,exports){
+},{"../theme":41,"../utils":45,"./Icon":32,"aphrodite/no-important":6,"prop-types":undefined}],29:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2196,6 +2200,10 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
@@ -2218,7 +2226,7 @@ function Container(_ref, _ref2) {
 };
 
 Container.contextTypes = {
-	theme: _react.PropTypes.object.isRequired
+	theme: _propTypes2['default'].object.isRequired
 };
 
 var defaultStyles = {
@@ -2244,7 +2252,7 @@ var defaultStyles = {
 module.exports = Container;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../theme":41,"../utils":45,"aphrodite/no-important":6}],30:[function(require,module,exports){
+},{"../theme":41,"../utils":45,"aphrodite/no-important":6,"prop-types":undefined}],30:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2257,6 +2265,10 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
@@ -2302,14 +2314,14 @@ function Footer(_ref, _ref2) {
 };
 
 Footer.propTypes = {
-	caption: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-	countCurrent: _react.PropTypes.number,
-	countSeparator: _react.PropTypes.string,
-	countTotal: _react.PropTypes.number,
-	showCount: _react.PropTypes.bool
+	caption: _propTypes2['default'].oneOfType([_propTypes2['default'].string, _propTypes2['default'].element]),
+	countCurrent: _propTypes2['default'].number,
+	countSeparator: _propTypes2['default'].string,
+	countTotal: _propTypes2['default'].number,
+	showCount: _propTypes2['default'].bool
 };
 Footer.contextTypes = {
-	theme: _react.PropTypes.object.isRequired
+	theme: _propTypes2['default'].object.isRequired
 };
 
 var defaultStyles = {
@@ -2339,7 +2351,7 @@ var defaultStyles = {
 module.exports = Footer;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../theme":41,"../utils":45,"aphrodite/no-important":6}],31:[function(require,module,exports){
+},{"../theme":41,"../utils":45,"aphrodite/no-important":6,"prop-types":undefined}],31:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2352,6 +2364,10 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
@@ -2394,12 +2410,12 @@ function Header(_ref, _ref2) {
 };
 
 Header.propTypes = {
-	customControls: _react.PropTypes.array,
-	onClose: _react.PropTypes.func.isRequired,
-	showCloseButton: _react.PropTypes.bool
+	customControls: _propTypes2['default'].array,
+	onClose: _propTypes2['default'].func.isRequired,
+	showCloseButton: _propTypes2['default'].bool
 };
 Header.contextTypes = {
-	theme: _react.PropTypes.object.isRequired
+	theme: _propTypes2['default'].object.isRequired
 };
 
 var defaultStyles = {
@@ -2428,7 +2444,7 @@ var defaultStyles = {
 module.exports = Header;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../theme":41,"../utils":45,"./Icon":32,"aphrodite/no-important":6}],32:[function(require,module,exports){
+},{"../theme":41,"../utils":45,"./Icon":32,"aphrodite/no-important":6,"prop-types":undefined}],32:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2445,6 +2461,10 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _icons = require('../icons');
 
@@ -2464,8 +2484,8 @@ var Icon = function Icon(_ref) {
 };
 
 Icon.propTypes = {
-	fill: _react.PropTypes.string,
-	type: _react.PropTypes.oneOf(Object.keys(_icons2['default']))
+	fill: _propTypes2['default'].string,
+	type: _propTypes2['default'].oneOf(Object.keys(_icons2['default']))
 };
 Icon.defaultProps = {
 	fill: 'white'
@@ -2475,7 +2495,7 @@ exports['default'] = Icon;
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../icons":40}],33:[function(require,module,exports){
+},{"../icons":40,"prop-types":undefined}],33:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2498,6 +2518,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
@@ -2699,15 +2723,15 @@ var PaginatedThumbnails = (function (_Component) {
 exports['default'] = PaginatedThumbnails;
 
 PaginatedThumbnails.propTypes = {
-	currentImage: _react.PropTypes.number,
-	images: _react.PropTypes.array,
-	offset: _react.PropTypes.number,
-	onClickThumbnail: _react.PropTypes.func.isRequired
+	currentImage: _propTypes2['default'].number,
+	images: _propTypes2['default'].array,
+	offset: _propTypes2['default'].number,
+	onClickThumbnail: _propTypes2['default'].func.isRequired
 };
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../theme":41,"./Arrow":28,"./Thumbnail":36,"aphrodite/no-important":6}],34:[function(require,module,exports){
+},{"../theme":41,"./Arrow":28,"./Thumbnail":36,"aphrodite/no-important":6,"prop-types":undefined}],34:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2719,11 +2743,17 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 // Pass the Lightbox context through to the Portal's descendents
 // StackOverflow discussion http://goo.gl/oclrJ9
@@ -2755,17 +2785,17 @@ var PassContext = (function (_Component) {
 ;
 
 PassContext.propTypes = {
-	context: _react.PropTypes.object.isRequired
+	context: _propTypes2['default'].object.isRequired
 };
 PassContext.childContextTypes = {
-	theme: _react.PropTypes.object
+	theme: _propTypes2['default'].object
 };
 
 exports['default'] = PassContext;
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],35:[function(require,module,exports){
+},{"prop-types":undefined}],35:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2788,6 +2818,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');
 
@@ -2862,12 +2896,12 @@ var Portal = (function (_Component) {
 exports['default'] = Portal;
 
 Portal.contextTypes = {
-	theme: _react.PropTypes.object.isRequired
+	theme: _propTypes2['default'].object.isRequired
 };
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./PassContext":34,"react-addons-css-transition-group":undefined,"react-dom":undefined}],36:[function(require,module,exports){
+},{"./PassContext":34,"prop-types":undefined,"react-addons-css-transition-group":undefined,"react-dom":undefined}],36:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2880,6 +2914,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
@@ -2912,15 +2950,15 @@ function Thumbnail(_ref, _ref2) {
 }
 
 Thumbnail.propTypes = {
-	active: _react.PropTypes.bool,
-	index: _react.PropTypes.number,
-	onClick: _react.PropTypes.func.isRequired,
-	src: _react.PropTypes.string,
-	thumbnail: _react.PropTypes.string
+	active: _propTypes2['default'].bool,
+	index: _propTypes2['default'].number,
+	onClick: _propTypes2['default'].func.isRequired,
+	src: _propTypes2['default'].string,
+	thumbnail: _propTypes2['default'].string
 };
 
 Thumbnail.contextTypes = {
-	theme: _react.PropTypes.object.isRequired
+	theme: _propTypes2['default'].object.isRequired
 };
 
 var defaultStyles = {
@@ -2945,7 +2983,7 @@ exports['default'] = Thumbnail;
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../theme":41,"../utils":45,"aphrodite/no-important":6}],37:[function(require,module,exports){
+},{"../theme":41,"../utils":45,"aphrodite/no-important":6,"prop-types":undefined}],37:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
