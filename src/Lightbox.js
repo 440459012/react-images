@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { css, StyleSheet } from 'aphrodite/no-important';
 import ScrollLock from 'react-scrolllock';
 
@@ -217,6 +218,30 @@ class Lightbox extends Component {
 		const thumbnailsSize = showThumbnails ? theme.thumbnail.size : 0;
 		const heightOffset = `${theme.header.height + theme.footer.height + thumbnailsSize + (theme.container.gutter.vertical)}px`;
 
+		const imageOrVideoEmbed = image.youtubeVideoId
+			? <div
+				className={css(classes.videoWrapper)}>
+          <iframe
+					className={css(classes.wrappedVideoIframe)}
+					width={'560'}
+					height={'315'}
+					src={`//www.youtube.com/embed/${image.youtubeVideoId}?autoplay=1`}
+					frameBorder={'0'}
+					allowfullscreen></iframe>
+				</div>
+			: <img
+				className={css(classes.image)}
+				onClick={!!onClickImage && onClickImage}
+				sizes={sizes}
+				alt={image.alt}
+				src={image.src}
+				srcSet={srcset}
+				style={{
+					cursor: this.props.onClickImage ? 'pointer' : 'auto',
+					maxHeight: `calc(100vh - ${heightOffset})`,
+				}}
+				/>;
+
 		return (
 			<figure className={css(classes.figure)}>
 				{/*
@@ -224,18 +249,7 @@ class Lightbox extends Component {
 					https://fb.me/react-unknown-prop is resolved
 					<Swipeable onSwipedLeft={this.gotoNext} onSwipedRight={this.gotoPrev} />
 				*/}
-				<img
-					className={css(classes.image)}
-					onClick={!!onClickImage && onClickImage}
-					sizes={sizes}
-					alt={image.alt}
-					src={image.src}
-					srcSet={srcset}
-					style={{
-						cursor: this.props.onClickImage ? 'pointer' : 'auto',
-						maxHeight: `calc(100vh - ${heightOffset})`,
-					}}
-				/>
+				{imageOrVideoEmbed}
 				<Footer
 					caption={images[currentImage].caption}
 					countCurrent={currentImage + 1}
@@ -321,6 +335,7 @@ Lightbox.childContextTypes = {
 const classes = StyleSheet.create({
 	content: {
 		position: 'relative',
+		width: '80%',
 	},
 	figure: {
 		margin: 0, // remove browser default
@@ -334,6 +349,19 @@ const classes = StyleSheet.create({
 		// disable user select
 		WebkitTouchCallout: 'none',
 		userSelect: 'none',
+	},
+	videoWrapper: {
+		position: 'relative',
+		paddingBottom: '56.25%',
+		paddingTop: '25px',
+		height: 0,
+	},
+	wrappedVideoIframe: {
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		width: '100%',
+		height: '100%',
 	},
 });
 
