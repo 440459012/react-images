@@ -2946,12 +2946,19 @@ var Lightbox = (function (_Component) {
 				_componentsContainer2['default'],
 				{
 					key: 'open',
-					onClick: !!backdropClosesModal && onClose,
-					onTouchEnd: !!backdropClosesModal && onClose
+					onClick: function () {
+						return !!backdropClosesModal && onClose;
+					},
+					onTouchEnd: function () {
+						return !!backdropClosesModal && onClose;
+					}
 				},
 				_react2['default'].createElement(
 					'div',
-					{ className: (0, _aphroditeNoImportant.css)(classes.content), style: { marginBottom: offsetThumbnails, maxWidth: width } },
+					{
+						className: (0, _aphroditeNoImportant.css)(classes.content),
+						style: { marginBottom: offsetThumbnails, maxWidth: width }
+					},
 					_react2['default'].createElement(_componentsHeader2['default'], {
 						customControls: customControls,
 						onClose: onClose,
@@ -2966,6 +2973,9 @@ var Lightbox = (function (_Component) {
 				_react2['default'].createElement(_reactScrolllock2['default'], null)
 			);
 		}
+	}, {
+		key: 'blankClick',
+		value: function blankClick() {}
 	}, {
 		key: 'renderImages',
 		value: function renderImages() {
@@ -2994,18 +3004,18 @@ var Lightbox = (function (_Component) {
 
 			var imageOrVideoEmbed = image.youtubeVideoId ? _react2['default'].createElement(
 				'div',
-				{
-					className: (0, _aphroditeNoImportant.css)(classes.videoWrapper) },
+				{ className: (0, _aphroditeNoImportant.css)(classes.videoWrapper) },
 				_react2['default'].createElement('iframe', {
 					className: (0, _aphroditeNoImportant.css)(classes.wrappedVideoIframe),
 					width: '560',
 					height: '315',
 					src: '//www.youtube.com/embed/' + image.youtubeVideoId + '?autoplay=1',
 					frameBorder: '0',
-					allowfullscreen: true })
+					allowFullScreen: true
+				})
 			) : _react2['default'].createElement('img', {
 				className: (0, _aphroditeNoImportant.css)(classes.image),
-				onClick: !!onClickImage && onClickImage,
+				onClick: onClickImage ? onClickImage : this.blankClick,
 				sizes: sizes,
 				alt: image.alt,
 				src: image.src,
@@ -3144,10 +3154,5 @@ var classes = _aphroditeNoImportant.StyleSheet.create({
 
 exports['default'] = Lightbox;
 module.exports = exports['default'];
-/*
-Re-implement when react warning "unknown props"
-https://fb.me/react-unknown-prop is resolved
-<Swipeable onSwipedLeft={this.gotoNext} onSwipedRight={this.gotoPrev} />
-*/
 
 },{"./components/Arrow":27,"./components/Container":28,"./components/Footer":29,"./components/Header":30,"./components/PaginatedThumbnails":32,"./components/Portal":34,"./theme":40,"./utils":44,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined,"react-scrolllock":undefined}]},{},[]);

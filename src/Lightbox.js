@@ -17,11 +17,7 @@ class Lightbox extends Component {
 	constructor () {
 		super();
 
-		bindFunctions.call(this, [
-			'gotoNext',
-			'gotoPrev',
-			'handleKeyboardInput',
-		]);
+		bindFunctions.call(this, ['gotoNext', 'gotoPrev', 'handleKeyboardInput']);
 	}
 	getChildContext () {
 		return {
@@ -60,7 +56,11 @@ class Lightbox extends Component {
 		}
 
 		// add/remove event listeners
-		if (!this.props.isOpen && nextProps.isOpen && nextProps.enableKeyboardInput) {
+		if (
+			!this.props.isOpen &&
+			nextProps.isOpen &&
+			nextProps.enableKeyboardInput
+		) {
 			window.addEventListener('keydown', this.handleKeyboardInput);
 		}
 		if (!nextProps.isOpen && nextProps.enableKeyboardInput) {
@@ -91,13 +91,12 @@ class Lightbox extends Component {
 		}
 	}
 	gotoNext (event) {
-		if (this.props.currentImage === (this.props.images.length - 1)) return;
+		if (this.props.currentImage === this.props.images.length - 1) return;
 		if (event) {
 			event.preventDefault();
 			event.stopPropagation();
 		}
 		this.props.onClickNext();
-
 	}
 	gotoPrev (event) {
 		if (this.props.currentImage === 0) return;
@@ -106,21 +105,22 @@ class Lightbox extends Component {
 			event.stopPropagation();
 		}
 		this.props.onClickPrev();
-
 	}
 	handleKeyboardInput (event) {
-		if (event.keyCode === 37) { // left
+		if (event.keyCode === 37) {
+			// left
 			this.gotoPrev(event);
 			return true;
-		} else if (event.keyCode === 39) { // right
+		} else if (event.keyCode === 39) {
+			// right
 			this.gotoNext(event);
 			return true;
-		} else if (event.keyCode === 27) { // esc
+		} else if (event.keyCode === 27) {
+			// esc
 			this.props.onClose();
 			return true;
 		}
 		return false;
-
 	}
 
 	// ==============================
@@ -141,7 +141,7 @@ class Lightbox extends Component {
 		);
 	}
 	renderArrowNext () {
-		if (this.props.currentImage === (this.props.images.length - 1)) return null;
+		if (this.props.currentImage === this.props.images.length - 1) return null;
 
 		return (
 			<Arrow
@@ -174,10 +174,13 @@ class Lightbox extends Component {
 		return (
 			<Container
 				key="open"
-				onClick={!!backdropClosesModal && onClose}
-				onTouchEnd={!!backdropClosesModal && onClose}
+				onClick={() => !!backdropClosesModal && onClose}
+				onTouchEnd={() => !!backdropClosesModal && onClose}
 			>
-				<div className={css(classes.content)} style={{ marginBottom: offsetThumbnails, maxWidth: width }}>
+				<div
+					className={css(classes.content)}
+					style={{ marginBottom: offsetThumbnails, maxWidth: width }}
+				>
 					<Header
 						customControls={customControls}
 						onClose={onClose}
@@ -193,6 +196,7 @@ class Lightbox extends Component {
 			</Container>
 		);
 	}
+	blankClick () {}
 	renderImages () {
 		const {
 			currentImage,
@@ -216,22 +220,26 @@ class Lightbox extends Component {
 		}
 
 		const thumbnailsSize = showThumbnails ? theme.thumbnail.size : 0;
-		const heightOffset = `${theme.header.height + theme.footer.height + thumbnailsSize + (theme.container.gutter.vertical)}px`;
+		const heightOffset = `${theme.header.height +
+			theme.footer.height +
+			thumbnailsSize +
+			theme.container.gutter.vertical}px`;
 
-		const imageOrVideoEmbed = image.youtubeVideoId
-			? <div
-				className={css(classes.videoWrapper)}>
-          <iframe
+		const imageOrVideoEmbed = image.youtubeVideoId ? (
+			<div className={css(classes.videoWrapper)}>
+				<iframe
 					className={css(classes.wrappedVideoIframe)}
 					width={'560'}
 					height={'315'}
 					src={`//www.youtube.com/embed/${image.youtubeVideoId}?autoplay=1`}
 					frameBorder={'0'}
-					allowfullscreen></iframe>
-				</div>
-			: <img
+					allowFullScreen
+				/>
+			</div>
+		) : (
+			<img
 				className={css(classes.image)}
-				onClick={!!onClickImage && onClickImage}
+				onClick={onClickImage ? onClickImage : this.blankClick}
 				sizes={sizes}
 				alt={image.alt}
 				src={image.src}
@@ -240,15 +248,11 @@ class Lightbox extends Component {
 					cursor: this.props.onClickImage ? 'pointer' : 'auto',
 					maxHeight: `calc(100vh - ${heightOffset})`,
 				}}
-				/>;
+			/>
+		);
 
 		return (
 			<figure className={css(classes.figure)}>
-				{/*
-					Re-implement when react warning "unknown props"
-					https://fb.me/react-unknown-prop is resolved
-					<Swipeable onSwipedLeft={this.gotoNext} onSwipedRight={this.gotoPrev} />
-				*/}
 				{imageOrVideoEmbed}
 				<Footer
 					caption={images[currentImage].caption}
@@ -261,7 +265,13 @@ class Lightbox extends Component {
 		);
 	}
 	renderThumbnails () {
-		const { images, currentImage, onClickThumbnail, showThumbnails, thumbnailOffset } = this.props;
+		const {
+			images,
+			currentImage,
+			onClickThumbnail,
+			showThumbnails,
+			thumbnailOffset,
+		} = this.props;
 
 		if (!showThumbnails) return;
 
@@ -275,11 +285,7 @@ class Lightbox extends Component {
 		);
 	}
 	render () {
-		return (
-			<Portal>
-				{this.renderDialog()}
-			</Portal>
-		);
+		return <Portal>{this.renderDialog()}</Portal>;
 	}
 }
 
