@@ -1,6 +1,6 @@
 {
 	"name": "react-images",
-	"version": "0.5.8",
+	"version": "0.5.9",
 	"description":
 		"A simple, responsive lightbox component for displaying an array of images with React.js",
 	"main": "lib/Lightbox.js",
@@ -11,11 +11,11 @@
 		"url": "https://github.com/jossmac/react-images.git"
 	},
 	"dependencies": {
-		"aphrodite": "0.5.0",
-		"gulp": "3.9.0",
-		"gulp-cli": "1.4.0",
-		"prop-types": "15.6.0",
-		"react-scrolllock": "1.0.5",
+		"aphrodite": "^0.5.0",
+		"gulp": "^3.9.0",
+		"gulp-cli": "^1.4.0",
+		"prop-types": "^15.6.0",
+		"react-scrolllock": "^1.0.5",
 		"react-transition-group": "^1.2.1"
 	},
 	"devDependencies": {
