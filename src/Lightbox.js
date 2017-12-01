@@ -174,8 +174,8 @@ class Lightbox extends Component {
 		return (
 			<Container
 				key="open"
-				onClick={() => !!backdropClosesModal && onClose}
-				onTouchEnd={() => !!backdropClosesModal && onClose}
+				onClick={() => !!backdropClosesModal && onClose()}
+				onTouchEnd={() => !!backdropClosesModal && onClose()}
 			>
 				<div
 					className={css(classes.content)}

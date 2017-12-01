@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Transition from 'react-addons-css-transition-group';
+var CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 import { render } from 'react-dom';
 import PassContext from './PassContext';
-
 
 export default class Portal extends Component {
 	constructor () {
@@ -23,14 +22,16 @@ export default class Portal extends Component {
 				.fade-enter { opacity: 0.01; }
 				.fade-enter.fade-enter-active { opacity: 1; transition: opacity ${duration}ms; }
 				.fade-leave { opacity: 1; }
-				.fade-leave.fade-leave-active { opacity: 0.01; transition: opacity ${duration}ms; }
+				.fade-leave.fade-leave-active { opacity: 0.01; transition: opacity ${
+					duration
+				}ms; }
 		`;
 
 		render(
 			<PassContext context={this.context}>
 				<div>
 					<style>{styles}</style>
-					<Transition
+					<CSSTransitionGroup
 						component="div"
 						transitionName="fade"
 						transitionEnterTimeout={duration}

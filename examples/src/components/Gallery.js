@@ -62,18 +62,14 @@ class Gallery extends Component {
 					href={obj.src}
 					className={css(classes.thumbnail, classes[obj.orientation])}
 					key={i}
-					onClick={(e) => this.openLightbox(i, e)}
+					onClick={e => this.openLightbox(i, e)}
 				>
 					<img src={obj.thumbnail} className={css(classes.source)} />
 				</a>
 			);
 		});
 
-		return (
-			<div className={css(classes.gallery)}>
-				{gallery}
-			</div>
-		);
+		return <div className={css(classes.gallery)}>{gallery}</div>;
 	}
 	render () {
 		return (
@@ -82,6 +78,7 @@ class Gallery extends Component {
 				{this.props.subheading && <p>{this.props.subheading}</p>}
 				{this.renderGallery()}
 				<Lightbox
+					backdropClosesModal
 					currentImage={this.state.currentImage}
 					images={this.props.images}
 					isOpen={this.state.lightboxIsOpen}
@@ -96,7 +93,7 @@ class Gallery extends Component {
 			</div>
 		);
 	}
-};
+}
 
 Gallery.displayName = 'Gallery';
 Gallery.propTypes = {
