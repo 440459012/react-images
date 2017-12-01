@@ -174,8 +174,8 @@ class Lightbox extends Component {
 		return (
 			<Container
 				key="open"
-				onClick={() => !!backdropClosesModal && onClose}
-				onTouchEnd={() => !!backdropClosesModal && onClose}
+				onClick={!!backdropClosesModal && onClose}
+				onTouchEnd={!!backdropClosesModal && onClose}
 			>
 				<div className={css(classes.content)} style={{ marginBottom: offsetThumbnails, maxWidth: width }}>
 					<Header
@@ -227,7 +227,7 @@ class Lightbox extends Component {
 					height={'315'}
 					src={`//www.youtube.com/embed/${image.youtubeVideoId}?autoplay=1`}
 					frameBorder={'0'}
-					allowFullScreen></iframe>
+					allowfullscreen></iframe>
 				</div>
 			: <img
 				className={css(classes.image)}
