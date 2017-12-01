@@ -2946,8 +2946,12 @@ var Lightbox = (function (_Component) {
 				_componentsContainer2['default'],
 				{
 					key: 'open',
-					onClick: !!backdropClosesModal && onClose,
-					onTouchEnd: !!backdropClosesModal && onClose
+					onClick: function () {
+						return !!backdropClosesModal && onClose;
+					},
+					onTouchEnd: function () {
+						return !!backdropClosesModal && onClose;
+					}
 				},
 				_react2['default'].createElement(
 					'div',
@@ -3002,7 +3006,7 @@ var Lightbox = (function (_Component) {
 					height: '315',
 					src: '//www.youtube.com/embed/' + image.youtubeVideoId + '?autoplay=1',
 					frameBorder: '0',
-					allowfullscreen: true })
+					allowFullScreen: true })
 			) : _react2['default'].createElement('img', {
 				className: (0, _aphroditeNoImportant.css)(classes.image),
 				onClick: !!onClickImage && onClickImage,
