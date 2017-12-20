@@ -2767,7 +2767,7 @@ var defaultStyles = {
 
 module.exports = Arrow;
 
-},{"../theme":53,"../utils":57,"./Icon":44,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],41:[function(require,module,exports){
+},{"../theme":54,"../utils":58,"./Icon":44,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],41:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -2830,7 +2830,7 @@ var defaultStyles = {
 
 module.exports = Container;
 
-},{"../theme":53,"../utils":57,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],42:[function(require,module,exports){
+},{"../theme":54,"../utils":58,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],42:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -2927,7 +2927,7 @@ var defaultStyles = {
 
 module.exports = Footer;
 
-},{"../theme":53,"../utils":57,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],43:[function(require,module,exports){
+},{"../theme":54,"../utils":58,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],43:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -3018,7 +3018,7 @@ var defaultStyles = {
 
 module.exports = Header;
 
-},{"../theme":53,"../utils":57,"./Icon":44,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],44:[function(require,module,exports){
+},{"../theme":54,"../utils":58,"./Icon":44,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3067,7 +3067,62 @@ Icon.defaultProps = {
 exports['default'] = Icon;
 module.exports = exports['default'];
 
-},{"../icons":52,"prop-types":undefined,"react":undefined}],45:[function(require,module,exports){
+},{"../icons":53,"prop-types":undefined,"react":undefined}],45:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _utils = require('../utils');
+
+var LockYScroll = (function (_Component) {
+	_inherits(LockYScroll, _Component);
+
+	function LockYScroll() {
+		_classCallCheck(this, LockYScroll);
+
+		_get(Object.getPrototypeOf(LockYScroll.prototype), 'constructor', this).apply(this, arguments);
+	}
+
+	_createClass(LockYScroll, [{
+		key: 'componentWillMount',
+		value: function componentWillMount() {
+			if (!_utils.canUseDom) return;
+			var body = document.querySelector('body');
+			body.classList.add('lightbox-y-scroll-lock');
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			if (!_utils.canUseDom) return;
+			var body = document.querySelector('body');
+			body.classList.remove('lightbox-y-scroll-lock');
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return null;
+		}
+	}]);
+
+	return LockYScroll;
+})(_react.Component);
+
+exports['default'] = LockYScroll;
+module.exports = exports['default'];
+
+},{"../utils":58,"react":undefined}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3301,7 +3356,7 @@ PaginatedThumbnails.propTypes = {
 };
 module.exports = exports['default'];
 
-},{"../theme":53,"./Arrow":40,"./Thumbnail":48,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],46:[function(require,module,exports){
+},{"../theme":54,"./Arrow":40,"./Thumbnail":49,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3363,7 +3418,7 @@ PassContext.childContextTypes = {
 exports['default'] = PassContext;
 module.exports = exports['default'];
 
-},{"prop-types":undefined,"react":undefined}],47:[function(require,module,exports){
+},{"prop-types":undefined,"react":undefined}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3465,7 +3520,7 @@ Portal.contextTypes = {
 };
 module.exports = exports['default'];
 
-},{"./PassContext":46,"prop-types":undefined,"react":undefined,"react-dom":undefined,"react-transition-group/CSSTransitionGroup":34}],48:[function(require,module,exports){
+},{"./PassContext":47,"prop-types":undefined,"react":undefined,"react-dom":undefined,"react-transition-group/CSSTransitionGroup":34}],49:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3545,7 +3600,7 @@ var defaultStyles = {
 exports['default'] = Thumbnail;
 module.exports = exports['default'];
 
-},{"../theme":53,"../utils":57,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],49:[function(require,module,exports){
+},{"../theme":54,"../utils":58,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}],50:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3558,7 +3613,7 @@ exports["default"] = function (fill) {
 
 module.exports = exports["default"];
 
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3571,7 +3626,7 @@ exports["default"] = function (fill) {
 
 module.exports = exports["default"];
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3584,7 +3639,7 @@ exports["default"] = function (fill) {
 
 module.exports = exports["default"];
 
-},{}],52:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -3593,7 +3648,7 @@ module.exports = {
 	close: require('./close')
 };
 
-},{"./arrowLeft":49,"./arrowRight":50,"./close":51}],53:[function(require,module,exports){
+},{"./arrowLeft":50,"./arrowRight":51,"./close":52}],54:[function(require,module,exports){
 // ==============================
 // THEME
 // ==============================
@@ -3652,7 +3707,7 @@ theme.arrow = {
 
 module.exports = theme;
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 /**
 	Bind multiple component methods:
 
@@ -3675,14 +3730,14 @@ module.exports = function bindFunctions(functions) {
 	});
 };
 
-},{}],55:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 // Return true if window + document
 
 'use strict';
 
 module.exports = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
-},{}],56:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -3709,7 +3764,7 @@ function deepMerge(target) {
 
 module.exports = deepMerge;
 
-},{}],57:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -3732,7 +3787,7 @@ module.exports = {
 	deepMerge: _deepMerge2['default']
 };
 
-},{"./bindFunctions":54,"./canUseDom":55,"./deepMerge":56}],"react-images":[function(require,module,exports){
+},{"./bindFunctions":55,"./canUseDom":56,"./deepMerge":57}],"react-images":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3759,9 +3814,9 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _aphroditeNoImportant = require('aphrodite/no-important');
 
-var _reactScrolllock = require('react-scrolllock');
+var _componentsLockYScroll = require('./components/LockYScroll');
 
-var _reactScrolllock2 = _interopRequireDefault(_reactScrolllock);
+var _componentsLockYScroll2 = _interopRequireDefault(_componentsLockYScroll);
 
 var _theme = require('./theme');
 
@@ -3997,7 +4052,7 @@ var Lightbox = (function (_Component) {
 				this.renderThumbnails(),
 				this.renderArrowPrev(),
 				this.renderArrowNext(),
-				_react2['default'].createElement(_reactScrolllock2['default'], null)
+				_react2['default'].createElement(_componentsLockYScroll2['default'], null)
 			);
 		}
 	}, {
@@ -4182,4 +4237,4 @@ var classes = _aphroditeNoImportant.StyleSheet.create({
 exports['default'] = Lightbox;
 module.exports = exports['default'];
 
-},{"./components/Arrow":40,"./components/Container":41,"./components/Footer":42,"./components/Header":43,"./components/PaginatedThumbnails":45,"./components/Portal":47,"./theme":53,"./utils":57,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined,"react-scrolllock":undefined}]},{},[]);
+},{"./components/Arrow":40,"./components/Container":41,"./components/Footer":42,"./components/Header":43,"./components/LockYScroll":45,"./components/PaginatedThumbnails":46,"./components/Portal":48,"./theme":54,"./utils":58,"aphrodite/no-important":6,"prop-types":undefined,"react":undefined}]},{},[]);

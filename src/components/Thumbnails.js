@@ -34,7 +34,7 @@ const classes = StyleSheet.create({
 		height: theme.thumbnail.size,
 		left: theme.container.gutter.horizontal,
 		overflowX: 'scroll',
-		overflowY: 'hidden',
+		overflowY: 'hiddsen',
 		position: 'absolute',
 		right: theme.container.gutter.horizontal,
 		textAlign: 'center',
